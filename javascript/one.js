@@ -38,5 +38,5 @@ let time = mydate.toTimeString();
 console.log(final);
 console.log(time);
 console.log(mydate.getDate());
-console.log(mydate.getMonth()+1);
+console.log(mydate.getMonth() + 1);
 console.log(mydate.getFullYear());
