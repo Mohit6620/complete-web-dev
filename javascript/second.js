@@ -118,3 +118,19 @@ handle_user({
   task: "node",
 }); //direclty creating an object in parrameter withouth creatting in other place
 //as like this we can passed Arrays inside the function and handletheir numerous methods
+
+
+//accesing function inside object 
+
+const data ={
+  id:1,
+  position:"x",
+  func:function data_display(one){
+      console.log(`here we are know about the data `)
+  }
+}
+console.log(data.func()) //calling function inside the object
+
+//arrow function 
+const arrow = (one,two)=>{ return one+two}
+console.log(arrow(5,4))
