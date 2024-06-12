@@ -35,6 +35,7 @@ const obj={
     name:'mohit',
     class:'MCA'
 }
-for(const data in obj){
-    console.log(`keys in the given object is ${data}`)
-}
+for (const property in obj) {
+    console.log(`${property}: ${obj[property]}`);
+  }
+  
