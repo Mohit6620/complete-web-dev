@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratice page</title>
+  </head>
+  <body>
+    <div class="divi">
+      <h1 id="head" class="heading">praticing js</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, impedit
+        corporis quaerat est, non qui quas animi debitis explicabo veniam eos
+        molestiae. Officiis tenetur hic repellat qui animi nam eius!
+      </p>
+    </div>
+    <div class="part_two">
+      <li class="day">sunday</li>
+      <li class="day">monday</li>
+      <li class="day">tuesday</li>
+    </div>
+
+    <!--adding subjects in this list with the helip of function below-->
+    <div class="subject">
+      <li class="pro">java</li>
+    </div>
+  </body>
+  <script>
+    const day = document.querySelector(".part_two"); //accesing parent class called as div
+    console.log(day);
+    console.log(day.children);
+    for (i = 0; day.children.length > i; i++) {
+      console.log(day.children[i].innerHTML); //printing details inside the given aday.children
+    }
+    console.log("first element  ", day.firstElementChild.innerHTML);
+    console.log(day.lastChild.innerHTML);
+
+    const indivisual = document.querySelector(".day"); //accesing  first in children class
+    console.log("parrent element", indivisual.parentElement.inert); //accesing parrent from the child
+    console.log(indivisual.nextElementSibling.innerHTML); //accesing next silbling from the
+    console.log(indivisual.nextElementSibling.nextElementSibling.innerHTML); //accssing next to next
+    console.log(indivisual);
+    console.log("printing all the nodes", day.childNodes); //behind the scene
+
+    //creating a seperate div with just using javascrip
+    const new_div = document.createElement("div");
+    new_div.className = "new div";
+    new_div.setAttribute("id", "js");
+    new_div.setAttribute("title", "hello");
+    new_div.style.backgroundColor = "red";
+    new_div.style.padding = "20px";
+    new_div.innerHTML = "this is the information present inside the new  div";
+    document.body.appendChild(new_div); //here we can add new div to page
+
+    //script for adding list in the above
+    function add_new_sub(subname) {
+      const li = document.createElement("li");
+      li.style.backgroundColor = "yellow";
+      li.innerHTML = `${subname}`;
+      const main = document.querySelector(".subject");
+      main.appendChild(li); //appending the list name to the above
+    }
+    add_new_sub("python");
+    add_new_sub("javascript");
+
+    //adding list element with the optimize method
+    function add_opti(subname) {
+      const li = document.createElement("li");
+      li.style.backgroundColor = "blue";
+      li.appendChild(document.createTextNode(subname));
+      document.querySelector(".subject").appendChild(li); //appending the list name to the above
+    }
+    add_opti("optimazation techniques");
+
+    //editing the values
+    const edit = document.querySelector("li:nth-child(3)");
+    const new_li = document.createElement("li");
+    new_li.innerHTML = "ruby";
+    edit.replaceWith(new_li);
+
+    //creating function for it
+    function replace(position, text) {
+      const edit = document.querySelector(`li:nth-child(${position})`);
+      const new_li = document.createElement("li");
+      new_li.style.backgroundColor = "grey";
+      new_li.innerHTML = text;
+      edit.replaceWith(new_li); //function for the replacement
+    }
+    replace(3, "networking"); // calling the function
+
+    //for remove
+    function remove(place) {
+      const remove = document.querySelector(`li:nth-child(${place})`);
+      remove.remove();
+    }
+    remove(1);//removes sunday 
+  </script>
+</html>
