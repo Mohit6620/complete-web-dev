@@ -7,16 +7,26 @@
   </head>
   <body>
     <div class="divi">
-      <h1 id="head" class="heading"> praticing js </h1> 
+      <h1 id="head" class="heading">praticing js</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, impedit
         corporis quaerat est, non qui quas animi debitis explicabo veniam eos
         molestiae. Officiis tenetur hic repellat qui animi nam eius!
       </p>
     </div>
+    <div class="part_two">
+      <li>sunday</li>
+      <li>monday</li>
+      <li>tuesday</li>
+      <li>wed</li>
+    </div>
   </body>
   <script>
-    const head =document.getElementById(head)
-    head.querySelector('id')
+    const day = document.querySelector(".part_two");//accesing all 
+    console.log(day);
+    console.log(day.children);
+    for (i = 0; day.children.length > i; i++) {
+      console.log(day.children[i].innerHTML); //printing details inside the given array
+    }
   </script>
 </html>
