@@ -15,18 +15,28 @@
       </p>
     </div>
     <div class="part_two">
-      <li>sunday</li>
-      <li>monday</li>
-      <li>tuesday</li>
-      <li>wed</li>
+      <li class="day">sunday</li>
+      <li class="day">monday</li>
+      <li class="day">tuesday</li>
     </div>
   </body>
   <script>
-    const day = document.querySelector(".part_two");//accesing all 
+    const day = document.querySelector(".part_two"); //accesing parent class called as div
     console.log(day);
     console.log(day.children);
     for (i = 0; day.children.length > i; i++) {
-      console.log(day.children[i].innerHTML); //printing details inside the given array
+      console.log(day.children[i].innerHTML); //printing details inside the given aday.children
     }
+    console.log("first element  ", day.firstElementChild.innerHTML);
+    console.log(day.lastChild.innerHTML);
+
+    const indivisual = document.querySelector(".day"); //accesing  first in children class
+    console.log("parrent element", indivisual.parentElement.inert); //accesing parrent from the child
+    console.log(indivisual.nextElementSibling.innerHTML); //accesing next silbling from the
+    console.log(indivisual.nextElementSibling.nextElementSibling.innerHTML); //accssing next to next
+
+    console.log("printing all the nodes", day.childNodes); //behind the scene
+
+    console.log(indivisual);
   </script>
 </html>
