@@ -13,8 +13,11 @@
 // date_1.innerHTML = final;
 
 setInterval(function () {
+  //due to this interval function it stars moving numbers
   //with using this funvtion we can see the running values
   let mydate = new Date();
+  let date = String(mydate);
+  let final = mydate.toDateString();
   const div = document.querySelector("#clock");
   const date_1 = document.querySelector("#date");
   div.innerHTML = mydate.toLocaleTimeString();
