@@ -22,5 +22,11 @@ buttons.forEach(function (button) {
     if (e.target.id === "yellow") {
       body.style.backgroundColor = "yellow";
     }
+    if (e.target.id === "red") {
+      body.style.backgroundColor = "red";
+    }
+    if (e.target.id === "pink") {
+      body.style.backgroundColor = "pink";
+    }
   });
 });
