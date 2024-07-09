@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <title>Pratice events</title>
+  </head>
+  <body>
+    <div class="names" id="names">
+      <ul class="city">
+        <li class="pune" id="pune">pune</li>
+        <li class="nashik">nashik</li>
+        <li class="mumbai">mumbai</li>
+        <li class="jalgaon">jalgaon</li>
+        <input type="text" class="input text" />
+        <button class="btn btn-primary">primary button</button>
+        <button class="btn btn-outline-danger btn-large" id="btn">
+          outline danger button
+        </button>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //here we come with the concept of propogation
+    // there are two types
+    //1 bubbling in this we use third parameter as false it will go from child to parents
+    //2capturing in this we use third parameter as true it will go  parents to child
+    //for stopping this propogation we used stopPropogation method
+
+    // Select the first element with the class name 'names'
+    const name = document.querySelector(".names");
+    name.addEventListener(
+      "click",
+      function (e) {
+        console.log("clicking just inside the div");
+        //e.stopPropogation(); // This stops the propagation of the event
+      },
+      true
+    );
+
+    // Select the first element with the class name 'pune'
+    const city = document.querySelector(".pune");
+    city.addEventListener("click", function (e) {
+      console.log("clicking just the pune");
+      //e.stopPropagation(); // This stops the propagation of the event
+    }),
+      true;
+  </script>
+</html>
